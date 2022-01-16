@@ -1,8 +1,13 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import { Login } from './src';
 
 const App = () => {
-  return <View style={styles.backgroundStyle}></View>;
+  return (
+    <>
+      <Login />
+    </>
+  );
 };
 
 const styles = StyleSheet.create({
