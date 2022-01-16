@@ -17,11 +17,14 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 24,
     marginBottom: 16,
-    fontWeight: 'bold',
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   loginTextStyle: {
     color: 'grey',
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   emailContainerStyle: {
     width: '100%',
@@ -37,6 +40,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 8,
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   passwordContainerStyle: {
     width: '100%',
@@ -52,11 +57,15 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 8,
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   forgotPasswordTextStyle: {
     alignSelf: 'flex-end',
     color: 'grey',
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   loginButtonStyle: {
     width: '100%',
@@ -69,6 +78,8 @@ const styles = StyleSheet.create({
   loginButtonTextStyle: {
     color: 'white',
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   loginWithGoogleButtonStyle: {
     width: '100%',
@@ -84,6 +95,8 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 14,
     marginLeft: 8,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   registerContainerStyle: {
     flexDirection: 'row',
@@ -92,10 +105,14 @@ const styles = StyleSheet.create({
   registerQuestionTextStyle: {
     color: 'white',
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
   registerTextStyle: {
     color: 'rgb(105,112,255)',
     fontSize: 14,
+    fontFamily: 'OpenSans',
+    fontWeight: '900'
   },
 });
 
