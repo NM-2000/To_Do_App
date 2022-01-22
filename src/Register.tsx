@@ -1,6 +1,8 @@
+import { NativeStackNavigationHelpers } from '@react-navigation/native-stack/lib/typescript/src/types';
 import React, { memo, useCallback, useState } from 'react';
 import { View, StyleSheet, Text, TextInput, Pressable } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { ROUTES } from '../routes';
 
 const styles = StyleSheet.create({
     registerContainer: {
@@ -124,11 +126,12 @@ const SIGN_UP_TEXT = 'Sign Up';
 const HAVE_ACCOUNT_TEXT = 'Have an Account? ';
 const SIGN_IN_TEXT = 'Sign In';
 
-const Register: React.FC<{}> = ({ }) => {
+const Register: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({ navigation }) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const onSignInPress = useCallback(() => {
         console.log('Sign In!');
+        navigation.navigate(ROUTES.LOGIN);
     }, []);
 
     const onSignUpPress = useCallback(() => {
