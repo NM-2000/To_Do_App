@@ -1,5 +1,12 @@
-import React, {memo, useCallback, useState} from 'react';
-import {View, StyleSheet, Text, TextInput, Pressable, Image} from 'react-native';
+import React, { memo, useCallback, useState } from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TextInput,
+  Pressable,
+  Image,
+} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const styles = StyleSheet.create({
@@ -18,13 +25,13 @@ const styles = StyleSheet.create({
     fontSize: 26,
     marginBottom: 16,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
   },
   loginTextStyle: {
     color: 'grey',
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
   },
   emailContainerStyle: {
     width: '100%',
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
   },
   passwordContainerStyle: {
     width: '100%',
@@ -58,14 +65,20 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
+  },
+  forgotPasswordContainerStyle: {
+    alignSelf: 'flex-end',
   },
   forgotPasswordTextStyle: {
     alignSelf: 'flex-end',
     color: 'grey',
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
+  },
+  pressedForgotPasswordTextStyle: {
+    color: 'darkgrey',
   },
   loginButtonStyle: {
     width: '100%',
@@ -75,11 +88,14 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderRadius: 16,
   },
+  pressedLoginButtonStyle: {
+    backgroundColor: 'rgb(50,100,255)',
+  },
   loginButtonTextStyle: {
     color: 'white',
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
   },
   loginWithGoogleButtonStyle: {
     width: '100%',
@@ -91,12 +107,15 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     borderRadius: 16,
   },
+  pressedLoginWithGoogleButtonStyle: {
+    backgroundColor: 'rgb(200,200,200)',
+  },
   loginWithGoogleButtonTextStyle: {
     color: 'black',
     fontSize: 14,
     marginLeft: 8,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
   },
   registerContainerStyle: {
     flexDirection: 'row',
@@ -106,13 +125,16 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
   },
   registerTextStyle: {
     color: 'rgb(105,112,255)',
     fontSize: 14,
     fontFamily: 'OpenSans',
-    fontWeight: '900'
+    fontWeight: '900',
+  },
+  pressedRegisterTextStyle: {
+    color: 'rgb(50,100,255)',
   },
 });
 
@@ -126,11 +148,11 @@ const LOGIN_WITH_GOOGLE_BUTTON_TEXT = 'Sign In with Google';
 const REGISTER_QUESTION_TEXT = `Don't have an Account? `;
 const REGISTER_TEXT = 'Sign Up';
 
-const Login: React.FC<{}> = ({}) => {
+const Login: React.FC<{}> = ({ }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = useCallback(() => {
-    console.log("heyy!!");
+    console.log('heyy!!');
     setShowPassword(showPassword ? false : true);
   }, []);
 
@@ -159,11 +181,18 @@ const Login: React.FC<{}> = ({}) => {
       <View style={styles.sectionContainerStyle}>
         <View style={styles.emailContainerStyle}>
           <FontAwesome5 name={'paper-plane'} size={20} />
-          <TextInput style={styles.emailInputStyle} placeholder={EMAIL_PLACEHOLDER} />
+          <TextInput
+            style={styles.emailInputStyle}
+            placeholder={EMAIL_PLACEHOLDER}
+          />
         </View>
         <View style={styles.passwordContainerStyle}>
           <FontAwesome5 name={'lock'} size={20} />
-          <TextInput style={styles.passwordInputStyle} placeholder={PASSWORD_PLACEHOLDER} secureTextEntry={!showPassword} />
+          <TextInput
+            style={styles.passwordInputStyle}
+            placeholder={PASSWORD_PLACEHOLDER}
+            secureTextEntry={!showPassword}
+          />
           <Pressable onPress={togglePassword}>
             <FontAwesome5
               name={!showPassword ? 'eye-slash' : 'eye'}
@@ -171,18 +200,26 @@ const Login: React.FC<{}> = ({}) => {
             />
           </Pressable>
         </View>
-        <Text style={styles.forgotPasswordTextStyle} onPress={forgotPassword}>
-          {FORGOT_PASSWORD_TEXT}
-        </Text>
+        <Pressable style={styles.forgotPasswordContainerStyle} onPress={forgotPassword} >
+          {({pressed}) => <Text style={[styles.forgotPasswordTextStyle, pressed ? styles.pressedForgotPasswordTextStyle : {}]}>
+            {FORGOT_PASSWORD_TEXT}
+          </Text>}
+          
+        </Pressable>
       </View>
       <View style={styles.sectionContainerStyle}>
-        <Pressable style={styles.loginButtonStyle} onPress={login}>
+        <Pressable
+          style={({ pressed }) => [
+            styles.loginButtonStyle,
+            pressed ? styles.pressedLoginButtonStyle : {},
+          ]}
+          onPress={login}>
           <Text style={styles.loginButtonTextStyle}>{LOGIN_BUTTON_TEXT}</Text>
         </Pressable>
         <Pressable
-          style={styles.loginWithGoogleButtonStyle}
+          style={({pressed}) => [styles.loginWithGoogleButtonStyle, pressed ? styles.pressedLoginWithGoogleButtonStyle : {}]}
           onPress={loginWithGoogle}>
-          <FontAwesome5 name={'google'} size={20} color={"rgb(105,112,255)"} />
+          <FontAwesome5 name={'google'} size={20} color={'rgb(105,112,255)'} />
           <Text style={styles.loginWithGoogleButtonTextStyle}>
             {LOGIN_WITH_GOOGLE_BUTTON_TEXT}
           </Text>
@@ -191,9 +228,17 @@ const Login: React.FC<{}> = ({}) => {
           <Text style={styles.registerQuestionTextStyle}>
             {REGISTER_QUESTION_TEXT}
           </Text>
-          <Text style={styles.registerTextStyle} onPress={register}>
-            {REGISTER_TEXT}
-          </Text>
+          <Pressable onPress={register}>
+            {({ pressed }) => (
+              <Text
+                style={[
+                  styles.registerTextStyle,
+                  pressed ? styles.pressedRegisterTextStyle : {},
+                ]}>
+                {REGISTER_TEXT}
+              </Text>
+            )}
+          </Pressable>
         </View>
       </View>
     </View>

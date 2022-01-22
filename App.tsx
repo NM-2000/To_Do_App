@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import { Login, Register } from './src';
 
 const App = () => {
