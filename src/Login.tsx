@@ -1,3 +1,4 @@
+import { NativeStackNavigationHelpers } from '@react-navigation/native-stack/lib/typescript/src/types';
 import React, { memo, useCallback, useState } from 'react';
 import {
   View,
@@ -8,6 +9,7 @@ import {
   Image,
 } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { ROUTES } from '../routes';
 
 const styles = StyleSheet.create({
   mainContainerStyle: {
@@ -148,7 +150,7 @@ const LOGIN_WITH_GOOGLE_BUTTON_TEXT = 'Sign In with Google';
 const REGISTER_QUESTION_TEXT = `Don't have an Account? `;
 const REGISTER_TEXT = 'Sign Up';
 
-const Login: React.FC<{}> = ({ }) => {
+const Login: React.FC<{navigation : NativeStackNavigationHelpers}> = ({ navigation }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = useCallback(() => {
@@ -170,6 +172,7 @@ const Login: React.FC<{}> = ({ }) => {
 
   const register = useCallback(() => {
     console.log('Sign Up!');
+    navigation.navigate(ROUTES.REGISTER);
   }, []);
 
   return (
