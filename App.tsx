@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import { Login } from './src';
+import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import { Login, Register } from './src';
 
 const App = () => {
   return (
     <>
-      <Login />
+      <Register />
     </>
   );
 };

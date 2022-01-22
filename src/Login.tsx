@@ -1,5 +1,5 @@
 import React, {memo, useCallback, useState} from 'react';
-import {View, StyleSheet, Text, TextInput, Pressable} from 'react-native';
+import {View, StyleSheet, Text, TextInput, Pressable, Image} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   welcomeTextStyle: {
     color: 'white',
-    fontSize: 24,
+    fontSize: 26,
     marginBottom: 16,
     fontFamily: 'OpenSans',
     fontWeight: '900'
