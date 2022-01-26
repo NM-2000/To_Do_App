@@ -164,6 +164,7 @@ const Login: React.FC<{navigation : NativeStackNavigationHelpers}> = ({ navigati
 
   const login = useCallback(() => {
     console.log('Sign In!');
+    navigation.navigate(ROUTES.HOMEPAGE);
   }, []);
 
   const loginWithGoogle = useCallback(() => {

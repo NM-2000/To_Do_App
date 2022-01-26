@@ -19,6 +19,11 @@ const App = () => {
         <Stack.Screen
           name={ROUTES.REGISTER}
           component={ROUTE_MAP[ROUTES.REGISTER]}
+          options={{ headerShown: false, animation: 'slide_from_left' }}
+        />
+        <Stack.Screen
+          name={ROUTES.HOMEPAGE}
+          component={ROUTE_MAP[ROUTES.HOMEPAGE]}
           options={{ headerShown: false, animation: 'slide_from_right' }}
         />
       </Stack.Navigator>
