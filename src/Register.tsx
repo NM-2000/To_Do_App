@@ -136,6 +136,7 @@ const Register: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({ navi
 
     const onSignUpPress = useCallback(() => {
         console.log('Sign Up!');
+        navigation.navigate(ROUTES.HOMEPAGE);
     }, []);
 
     const togglePassword = useCallback(() => {

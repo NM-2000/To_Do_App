@@ -1,4 +1,5 @@
 export enum ROUTES {
     LOGIN = "Login",
-    REGISTER = "Register"
+    REGISTER = "Register",
+    HOMEPAGE = 'HomePage',
 };
