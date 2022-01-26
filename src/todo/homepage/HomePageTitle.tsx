@@ -1,7 +1,5 @@
 import React,  { memo } from 'react';
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
-
-const { width: SCREEN_WIDTH } = Dimensions.get("window");
+import { View, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
     titleContainerStyle: {
