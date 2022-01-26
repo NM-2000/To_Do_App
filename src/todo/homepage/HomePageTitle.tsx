@@ -1,4 +1,4 @@
-import React,  { memo } from 'react';
+import React, { memo } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
         fontSize: 32,
         color: 'grey',
         fontFamily: 'OpenSans',
-        fontWeight: "900",
+        fontWeight: '900',
     },
     lastTextStyle: {
         fontSize: 32,
         color: 'white',
         fontFamily: 'OpenSans',
-        fontWeight: "900",
+        fontWeight: '900',
     },
 });
 
@@ -35,23 +35,17 @@ const HOME_PAGE_TITLE = {
     LAST: 'Lists',
 };
 
-const HomePageTitle: React.FC<{}> = ({}) => {
-
+const HomePageTitle: React.FC<{}> = ({ }) => {
     return (
-        <View style={styles.titleContainerStyle} >
+        <View style={styles.titleContainerStyle}>
             <View style={styles.linearStyle} />
-            <View style={styles.textContainerStyle} >
-                <Text style={styles.firstTextStyle} >
-                    { HOME_PAGE_TITLE.FIRST }
-                </Text>
-                <Text style={styles.lastTextStyle} >
-                    { HOME_PAGE_TITLE.LAST }
-                </Text>
+            <View style={styles.textContainerStyle}>
+                <Text style={styles.firstTextStyle}>{HOME_PAGE_TITLE.FIRST}</Text>
+                <Text style={styles.lastTextStyle}>{HOME_PAGE_TITLE.LAST}</Text>
             </View>
             <View style={styles.linearStyle} />
         </View>
     );
-
 };
 
 export default memo(HomePageTitle);
