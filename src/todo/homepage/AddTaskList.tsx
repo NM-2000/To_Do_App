@@ -21,33 +21,33 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: 'grey',
         fontFamily: 'OpenSans',
-        fontWeight: "900",
+        fontWeight: '900',
         marginTop: 16,
     },
 });
 
-const ADD_TASK_LIST_TEXT = "Add List";
+const ADD_TASK_LIST_TEXT = 'Add List';
 
-const AddTaskList: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({ navigation }) => {
-
+const AddTaskList: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
+    navigation,
+}) => {
     const onAddListPress = useCallback(() => {
-        console.log("Added Task List!");
+        console.log('Added Task List!');
     }, []);
 
     return (
-        <View style={styles.addTaskListContainerStyle} >
-            <Pressable style={({ pressed }) => [styles.addTaskListButtonStyle, pressed ? styles.pressedAddTaskListButtonStyle : {}]} onPress={onAddListPress} >
-                <FontAwesome5
-                    name={"plus"}
-                    size={20}
-                />
+        <View style={styles.addTaskListContainerStyle}>
+            <Pressable
+                style={({ pressed }) => [
+                    styles.addTaskListButtonStyle,
+                    pressed ? styles.pressedAddTaskListButtonStyle : {},
+                ]}
+                onPress={onAddListPress}>
+                <FontAwesome5 name={'plus'} size={20} />
             </Pressable>
-            <Text style={styles.addTaskListTextStyle} >
-                { ADD_TASK_LIST_TEXT }
-            </Text>
+            <Text style={styles.addTaskListTextStyle}>{ADD_TASK_LIST_TEXT}</Text>
         </View>
     );
-
 };
 
 export default memo(AddTaskList);
