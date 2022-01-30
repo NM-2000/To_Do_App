@@ -26,6 +26,11 @@ const App = () => {
           component={ROUTE_MAP[ROUTES.HOMEPAGE]}
           options={{ headerShown: false, animation: 'slide_from_right' }}
         />
+        <Stack.Screen
+          name={ROUTES.ADD_NEW_LIST_PAGE}
+          component={ROUTE_MAP[ROUTES.ADD_NEW_LIST_PAGE]}
+          options={{headerShown: false, animation: 'slide_from_right'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
