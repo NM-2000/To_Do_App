@@ -4,6 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import Footer from '../Footer';
 import AddTaskList from './AddTaskList';
 import HomePageTitle from './HomePageTitle';
+import TasksCard from './TasksCard';
 
 const styles = StyleSheet.create({
     homepageContainerStyle: {
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
+        paddingTop: 100,
     },
 });
 
@@ -35,9 +37,16 @@ const HomePage: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
                      */
                     <AddTaskList navigation={navigation} />
                 }
-                {/**
-         * Horizontal ScrollView/Flatlist to Show Task Lists / Variable Section
-         */}
+                {
+                    /**
+                     * Horizontal ScrollView/Flatlist to Show Task Lists / Variable Section
+                     */
+                    <TasksCard navigation={navigation}
+                        title={" Trip to Paris"}
+                        bgColor={'tomato'}
+                        tasks={[{ description: "Book Flight", finished: true }, { description: "Passport check", finished: true }, ]}
+                    /> 
+                }
             </View>
             {
                 /**
