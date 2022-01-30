@@ -2,12 +2,14 @@ import { NativeStackNavigationHelpers } from '@react-navigation/native-stack/lib
 import React, { memo } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import AddNewListPageFooter from './AddNewListPageFooter';
 
 const styles = StyleSheet.create({
     addListPageStyle: {
         flex: 1,
         backgroundColor: 'white',
         paddingBottom: 32,
+        justifyContent: 'space-between'
     },
     addListIconStyle: {
         marginHorizontal: 32,
@@ -45,6 +47,7 @@ const AddNewListPage: React.FC<{ navigation: NativeStackNavigationHelpers }> = (
                 /**
                  * Footer for Page
                  */
+                <AddNewListPageFooter />
             }
         </View>
     );
