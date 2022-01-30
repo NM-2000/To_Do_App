@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import AddTaskList from './AddTaskList';
 import HomePageTitle from './HomePageTitle';
 import TasksCardsList from './TasksCardsList';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const styles = StyleSheet.create({
     homepageContainerStyle: {
@@ -16,8 +17,11 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
-        paddingTop: 100,
     },
+    homepageIconStyle: {
+        marginHorizontal: 32,
+        marginVertical: 48,
+    }
 });
 
 const cards: TasksCardProps[] = [
@@ -90,6 +94,13 @@ const HomePage: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
 }) => {
     return (
         <View style={styles.homepageContainerStyle}>
+            <View style={styles.homepageIconStyle} >
+                <FontAwesome5
+                    name={"pencil-alt"}
+                    size={32}
+                    color={"black"}
+                />
+            </View>
             <View style={styles.homepageStyle}>
                 {
                     /**
