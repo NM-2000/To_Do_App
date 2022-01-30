@@ -3,10 +3,50 @@ import React, { memo } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+const styles = StyleSheet.create({
+    addListPageStyle: {
+        flex: 1,
+        backgroundColor: 'white',
+        paddingBottom: 32,
+    },
+    addListIconStyle: {
+        marginHorizontal: 32,
+        marginVertical: 48,
+    }
+});
+
 const AddNewListPage: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({ navigation }) => {
  
     return (
-        <View></View>
+        <View style={styles.addListPageStyle} >
+            {
+                /**
+                 * Icon same as HomePage
+                 */
+                <View style={styles.addListIconStyle} >
+                    <FontAwesome5
+                        name={"pencil-alt"}
+                        size={32}
+                        color={"black"}
+                    />
+                </View>
+            }
+            {
+                /**
+                 * Section for Inputting List Title
+                 */
+            }
+            {
+                /**
+                 * Section for Adding Tasks
+                 */
+            }
+            {
+                /**
+                 * Footer for Page
+                 */
+            }
+        </View>
     );
 
 };
