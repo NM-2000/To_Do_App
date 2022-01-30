@@ -13,10 +13,13 @@ const styles = StyleSheet.create({
         paddingLeft: 16,
         borderRadius: 12,
         justifyContent: 'space-between',
-        elevation:5,
-        shadowColor: 'white',
-        borderColor: 'white',
-        borderWidth: 1,
+        elevation:10,
+        borderColor: 'lightgrey',
+        borderWidth: 2,
+    },
+    pressedCardStyle: {
+        elevation: 0,
+        opacity: 0.9,
     },
     titleTextStyle: {
         fontSize: 18,
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
         height: 16,
     },
     taskTextStyle: {
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: 'OpenSans',
         fontWeight: "900",
         color: "white",
@@ -43,7 +46,8 @@ const styles = StyleSheet.create({
     },
     taskContainerStyle: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        marginRight: 16,
     },
     viewContainerStyle: {
         alignSelf: 'flex-end',
@@ -56,7 +60,7 @@ const styles = StyleSheet.create({
         fontWeight: "900",
     }, 
     pressedViewTextStyle: {
-        color: 'black',
+        color: 'lightgrey',
     },
 });
 
@@ -74,7 +78,7 @@ const TasksCard: React.FC<{ navigation: NativeStackNavigationHelpers } & TasksCa
     }, []);
 
     return (
-        <Pressable style={[styles.tasksCardStyle, { backgroundColor: bgColor }]} >
+        <Pressable style={({ pressed }) => [styles.tasksCardStyle, { backgroundColor: bgColor }, pressed ? styles.pressedCardStyle : {}]} >
             <View>
                 <Text style={styles.titleTextStyle} numberOfLines={1} >
                     { title }

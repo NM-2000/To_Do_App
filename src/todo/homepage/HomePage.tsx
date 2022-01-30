@@ -1,17 +1,16 @@
 import { NativeStackNavigationHelpers } from '@react-navigation/native-stack/lib/typescript/src/types';
 import React, { memo } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { TasksCardProps } from '../../../types';
 import Footer from '../Footer';
 import AddTaskList from './AddTaskList';
 import HomePageTitle from './HomePageTitle';
-import TasksCard from './TasksCard';
 import TasksCardsList from './TasksCardsList';
 
 const styles = StyleSheet.create({
     homepageContainerStyle: {
         flex: 1,
-        backgroundColor: 'rgb(30,30,30)',
+        backgroundColor: 'white',
     },
     homepageStyle: {
         flex: 1,
