@@ -2,6 +2,7 @@ import { NativeStackNavigationHelpers } from '@react-navigation/native-stack/lib
 import React, { memo, useCallback } from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { ROUTES } from '../../../routes';
 
 const styles = StyleSheet.create({
     addTaskListContainerStyle: {
@@ -33,6 +34,7 @@ const AddTaskList: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
 }) => {
     const onAddListPress = useCallback(() => {
         console.log('Added Task List!');
+        navigation.navigate(ROUTES.ADD_NEW_LIST_PAGE);
     }, []);
 
     return (
