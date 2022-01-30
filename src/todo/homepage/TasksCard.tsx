@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
         paddingLeft: 16,
         borderRadius: 12,
         justifyContent: 'space-between',
+        elevation:5,
+        shadowColor: 'white',
+        borderColor: 'white',
+        borderWidth: 1,
     },
     titleTextStyle: {
         fontSize: 18,
@@ -82,7 +86,7 @@ const TasksCard: React.FC<{ navigation: NativeStackNavigationHelpers } & TasksCa
                             return null;
                         }
                         return (
-                            <View key={index.toString()} >
+                            <View key={"task" + index.toString()} >
                                 {
                                     (index > 0) ? <View style={styles.spaceStyle} /> : null
                                 }

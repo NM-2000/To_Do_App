@@ -1,10 +1,12 @@
 import { NativeStackNavigationHelpers } from '@react-navigation/native-stack/lib/typescript/src/types';
 import React, { memo } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { TasksCardProps } from '../../../types';
 import Footer from '../Footer';
 import AddTaskList from './AddTaskList';
 import HomePageTitle from './HomePageTitle';
 import TasksCard from './TasksCard';
+import TasksCardsList from './TasksCardsList';
 
 const styles = StyleSheet.create({
     homepageContainerStyle: {
@@ -18,6 +20,71 @@ const styles = StyleSheet.create({
         paddingTop: 100,
     },
 });
+
+const cards: TasksCardProps[] = [
+    {
+        title: "Trip to Paris",
+        bgColor: "tomato",
+        tasks: [
+            {
+                description: "Book Flights",
+                finished: true,
+            },
+            {
+                description: "Passport check",
+                finished: true,
+            },
+            {
+                description: "Packing luggage",
+                finished: false,
+            },
+            {
+                description: "Hotel reservation",
+                finished: false,
+            }
+        ]
+    },
+    {
+        title: "My Tasks",
+        bgColor: "purple",
+        tasks: [
+            {
+                description: "Buy milk",
+                finished: false,
+            },
+            {
+                description: "Plan weekend",
+                finished: false,
+            },
+            {
+                description: "Publish Friday Newsletter",
+                finished: true,
+            },
+            {
+                description: "Run 3 miles",
+                finished: false,
+            }
+        ]
+    },
+    {
+        title: "Office Week",
+        bgColor: "seagreen",
+        tasks: [
+            {
+                description: "Update Jira",
+                finished: true,
+            },
+            {
+                description: "Attend standup",
+                finished: false,
+            },
+            {
+                description: "Release bundles",
+                finished: true,
+            }
+        ]
+    }
+];
 
 const HomePage: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
     navigation,
@@ -41,11 +108,10 @@ const HomePage: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
                     /**
                      * Horizontal ScrollView/Flatlist to Show Task Lists / Variable Section
                      */
-                    <TasksCard navigation={navigation}
-                        title={" Trip to Paris"}
-                        bgColor={'tomato'}
-                        tasks={[{ description: "Book Flight", finished: true }, { description: "Passport check", finished: true }, ]}
-                    /> 
+                    <TasksCardsList
+                        navigation={navigation}
+                        cards={cards}
+                    />
                 }
             </View>
             {
