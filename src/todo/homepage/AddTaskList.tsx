@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
         paddingVertical: 16,
         paddingHorizontal: 18,
         borderRadius: 8,
-        borderWidth: 1,
-        borderColor: 'grey',
+        borderWidth: 2,
+        borderColor: 'lightgrey',
     },
     pressedAddTaskListButtonStyle: {
-        backgroundColor: 'rgb(50,50,50)',
+        backgroundColor: 'lightgrey',
     },
     addTaskListTextStyle: {
         fontSize: 14,
@@ -43,7 +43,7 @@ const AddTaskList: React.FC<{ navigation: NativeStackNavigationHelpers }> = ({
                     pressed ? styles.pressedAddTaskListButtonStyle : {},
                 ]}
                 onPress={onAddListPress}>
-                <FontAwesome5 name={'plus'} size={20} />
+                <FontAwesome5 name={'plus'} size={20} color={"grey"} />
             </Pressable>
             <Text style={styles.addTaskListTextStyle}>{ADD_TASK_LIST_TEXT}</Text>
         </View>

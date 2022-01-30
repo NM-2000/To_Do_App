@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
     },
     separatorStyle: {
-        width: 16,
+        width: 20,
         height: 16,
     },
 });

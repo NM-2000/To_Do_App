@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     linearStyle: {
-        backgroundColor: 'grey',
+        backgroundColor: 'lightgrey',
         width: '20%',
         height: 1,
     },
@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
     },
     firstTextStyle: {
         fontSize: 32,
-        color: 'grey',
+        color: 'black',
         fontFamily: 'OpenSans',
         fontWeight: '900',
     },
     lastTextStyle: {
         fontSize: 32,
-        color: 'white',
+        color: 'grey',
         fontFamily: 'OpenSans',
         fontWeight: '900',
     },

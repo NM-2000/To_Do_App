@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingVertical: 24,
         borderTopWidth: 1,
-        borderColor: 'grey',
+        borderColor: 'lightgrey',
         alignItems: 'center',
     },
     calendarButtonStyle: {
@@ -21,18 +21,18 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderLeftWidth: 1,
         borderRightWidth: 1,
-        borderColor: 'grey',
+        borderColor: 'lightgrey',
         alignItems: 'center',
     },
     profileButtonStyle: {
         flex: 1,
         paddingVertical: 24,
         borderTopWidth: 1,
-        borderColor: 'grey',
+        borderColor: 'lightgrey',
         alignItems: 'center',
     },
     pressedButtonStyle: {
-        backgroundColor: 'rgb(50,50,50)',
+        backgroundColor: 'lightgrey',
     },
 });
 
@@ -63,7 +63,7 @@ const Footer: React.FC<{
                 <FontAwesome5
                     name={'home'}
                     size={20}
-                    color={index === 0 ? 'white' : 'grey'}
+                    color={index === 0 ? 'black' : 'grey'}
                 />
             </Pressable>
             <Pressable onPress={onCalendarPress}
@@ -74,7 +74,7 @@ const Footer: React.FC<{
                 <FontAwesome5
                     name={'calendar-alt'}
                     size={20}
-                    color={index === 1 ? 'white' : 'grey'}
+                    color={index === 1 ? 'black' : 'grey'}
                 />
             </Pressable>
             <Pressable onPress={onProfilePress}
@@ -85,7 +85,7 @@ const Footer: React.FC<{
                 <FontAwesome5
                     name={'user'}
                     size={20}
-                    color={index === 2 ? 'white' : 'grey'}
+                    color={index === 2 ? 'black' : 'grey'}
                 />
             </Pressable>
         </View>
