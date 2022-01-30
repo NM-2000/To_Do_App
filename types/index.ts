@@ -10,3 +10,7 @@ export type TasksCardProps = {
     bgColor: ColorValue;
     tasks: TaskProps[];
 };
+
+export type TasksCardsListProps = {
+    cards: TasksCardProps[];
+};
